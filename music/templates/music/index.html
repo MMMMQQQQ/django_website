@@ -1,0 +1,18 @@
+{#include the style.css in this html fichier#}
+<!--Loads the path to your static files-->
+{#{%  %} is the template syntex#}
+{% extends 'music/base.html' %}
+
+
+{% block body %}
+
+
+        <ul>
+            {%for album in all_albums %}
+                <li><a href="{% url 'music:detail' album.id %}">{{ album.album_title}}</a></li>
+            {% endfor %}
+        </ul>
+
+
+{#for this time we will talk about how to include css in out template#}
+{% endblock %}
